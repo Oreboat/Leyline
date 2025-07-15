@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "leyline",
+  "version": "${version}",
+  "name": "Leyline",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/leyline/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "azure.leyline.client.LeylineDataGenerator"
+    ],
+    "client": [
+      "azure.leyline.client.LeylineClient"
+    ],
+    "main": [
+      "azure.leyline.Leyline"
+    ]
+  },
+  "mixins": [
+    "leyline.mixins.json",
+    {
+      "config": "leyline.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
